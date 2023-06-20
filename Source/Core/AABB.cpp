@@ -64,7 +64,24 @@ bool AABB::Intersects(const AABB& Box) const {
 }
 
 AABB AABB::Transform(const Matrix4& Matrix) const {
+	if (!IsValid()) return AABB();
 
+	Vector3 Points[8] = {};
+	Points[0] = Matrix * Vector4(Min.x, Min.y, Min.z, 1);
+	Points[1] = Matrix * Vector4(Min.x, Min.y, Max.z, 1);
+	Points[2] = Matrix * Vector4(Min.x, Max.y, Min.z, 1);
+	Points[3] = Matrix * Vector4(Min.x, Max.y, Max.z, 1);
+	Points[4] = Matrix * Vector4(Max.x, Min.y, Min.z, 1);
+	Points[5] = Matrix * Vector4(Max.x, Min.y, Max.z, 1);
+	Points[6] = Matrix * Vector4(Max.x, Max.y, Min.z, 1);
+	Points[7] = Matrix * Vector4(Max.x, Max.y, Max.z, 1);
+
+	AABB NewAABB;
+	for (auto& Point : Points) {
+		NewAABB.Min = min(NewAABB.Min, Point);
+		NewAABB.Max = max(NewAABB.Max, Point);
+	}
+	return NewAABB;
 }
 
 }
