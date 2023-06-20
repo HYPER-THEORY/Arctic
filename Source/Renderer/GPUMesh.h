@@ -22,14 +22,34 @@
 
 #pragma once
 
-#include "glm/glm.hpp"
+#include "../Core/Vector.h"
+
+#include <vector>
 
 namespace Arctic {
 
-using Vector2 = glm::vec<2, float, glm::defaultp>;
+struct VertexData {
+	Vector3 Position;    ///< the position of vertex
+	Vector3 Normal;      ///< the normal of vertex
+	Vector2 UV;          ///< the UV coordinate of vertex
+	Vector4 Tangent;     ///< the tangent of vertex
+};
 
-using Vector3 = glm::vec<3, float, glm::defaultp>;
+struct InstanceData {
+	
+	uint32_t VertexBufferOffset = 0;
+	uint32_t IndexBufferOffset = 0;
 
-using Vector4 = glm::vec<4, float, glm::defaultp>;
+	uint32_t MaterialId = 0;
+
+	uint32_t InstanceId = 0;
+};
+
+class GPUMesh {
+public:
+	std::vector<VertexData> VertexBuffer;
+	std::vector<uint32_t> IndexBuffer;
+
+};
 
 }

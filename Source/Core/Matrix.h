@@ -26,28 +26,28 @@
 
 namespace Arctic {
 
-using Matrix2 = glm::mat<2, 2, float, defaultp>;
+using Matrix2 = glm::mat<2, 2, float, glm::defaultp>;
 
-using Matrix3 = glm::mat<3, 3, float, defaultp>;
+using Matrix3 = glm::mat<3, 3, float, glm::defaultp>;
 
-using Matrix4 = glm::mat<4, 4, float, defaultp>;
+using Matrix4 = glm::mat<4, 4, float, glm::defaultp>;
 
-using Matrix2x2 = glm::mat<2, 2, float, defaultp>;
+using Matrix2x2 = glm::mat<2, 2, float, glm::defaultp>;
 
-using Matrix3x2 = glm::mat<3, 2, float, defaultp>;
+using Matrix3x2 = glm::mat<3, 2, float, glm::defaultp>;
 
-using Matrix4x2 = glm::mat<4, 2, float, defaultp>;
+using Matrix4x2 = glm::mat<4, 2, float, glm::defaultp>;
 
-using Matrix2x3 = glm::mat<2, 3, float, defaultp>;
+using Matrix2x3 = glm::mat<2, 3, float, glm::defaultp>;
 
-using Matrix3x3 = glm::mat<3, 3, float, defaultp>;
+using Matrix3x3 = glm::mat<3, 3, float, glm::defaultp>;
 
-using Matrix4x3 = glm::mat<4, 3, float, defaultp>;
+using Matrix4x3 = glm::mat<4, 3, float, glm::defaultp>;
 
-using Matrix2x4 = glm::mat<2, 4, float, defaultp>;
+using Matrix2x4 = glm::mat<2, 4, float, glm::defaultp>;
 
-using Matrix3x4 = glm::mat<3, 4, float, defaultp>;
+using Matrix3x4 = glm::mat<3, 4, float, glm::defaultp>;
 
-using Matrix4x4 = glm::mat<4, 4, float, defaultp>;
+using Matrix4x4 = glm::mat<4, 4, float, glm::defaultp>;
 
 }
